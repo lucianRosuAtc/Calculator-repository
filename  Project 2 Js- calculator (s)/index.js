@@ -19,6 +19,8 @@ for(let i=0; i<btn.length; i++){
     })
 }
 
+
+
 toggleBtn.onclick = function(){
     body.classList.toggle('dark')
 }
