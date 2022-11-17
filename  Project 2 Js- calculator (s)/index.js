@@ -1,54 +1,25 @@
-let num1 = 1200
-let num2 = 49
+let buttons = document.querySelector('.buttons')
+let btn = document.querySelectorAll('span')
+let value = document.getElementById('value')
+let toggleBtn = document.querySelector('.toggleBtn')
+let body = document.querySelector('body')
 
-document.getElementById("num1-el").textContent = num1
-document.getElementById("num2-el").textContent = num2
-
-
-let sumEl = document.getElementById("sum-el")
-
-
-
-function add() {
-    let result = num1 + num2
-    sumEl.textContent = "SUM: " + result
+for(let i=0; i<btn.length; i++){
+    btn[i].addEventListener("click",function(){
+    
+        if(this.innerHTML =="="){
+            value.innerHTML = eval(value.innerHTML)
+        }else{
+            if(this.innerHTML=="Clear"){
+                value.innerHTML=""
+            }else{
+                value.innerHTML += this.innerHTML
+            }
+        }
+    })
 }
 
-function subtract() {
-    let result = num1 - num2
-    sumEl.textContent = "DIFFERENCE: " + result
+toggleBtn.onclick = function(){
+    body.classList.toggle('dark')
 }
 
-function divide() {
-    let result = num1 / num2
-    sumEl.textContent = "THE QUOTIENT: " + result
-}
-
-function multiply() {
-    let result = num1 * num2
-    sumEl.textContent = "PRODUCT: " + result
-}
-
-function remainder(){
-    let result= num1 % num2
-    sumEl.textContent = " REMAINDER: " + result
-}
-
- function isSquare1 () {
-    let result = Math.pow(num1, 2);
-    sumEl.textContent = "EXPONENT: " + result
-}
-
-function squareRoot1(){
-    let result = Math.sqrt(num1)
-    sumEl.textContent = " THE RADICANT: " +result
-}
- function isSquare2 () {
-    let result = Math.pow(num2, 2);
-    sumEl.textContent = " EXPONENT: " + result
-}
-
-function squareRoot2(){
-    let result = Math.sqrt(num2)
-    sumEl.textContent = "THE RADICANT: " +result
-}
